@@ -1,0 +1,6 @@
+File=feren.kcfg
+ClassName=StyleConfigData
+NameSpace=Feren
+Singleton=true
+Mutators=true
+GlobalEnums=true

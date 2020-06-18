@@ -1,8 +1,8 @@
-install(FILES Breeze.colors
+install(FILES Feren.colors
         DESTINATION ${DATA_INSTALL_DIR}/color-schemes/)
-install(FILES BreezeDark.colors
+install(FILES FerenDark.colors
         DESTINATION ${DATA_INSTALL_DIR}/color-schemes/)
-install(FILES BreezeHighContrast.colors
+install(FILES FerenHighContrast.colors
         DESTINATION ${DATA_INSTALL_DIR}/color-schemes/)
-install(FILES BreezeLight.colors
+install(FILES FerenLight.colors
         DESTINATION ${DATA_INSTALL_DIR}/color-schemes/)
