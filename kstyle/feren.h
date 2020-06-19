@@ -74,7 +74,9 @@ namespace Feren
         GroupBox_TitleMarginWidth = 4,
 
         // buttons
-        Button_MinWidth = 80,
+        Button_MinHeight = 34,
+        Button_MinWidth = 78,
+        Button_MarginHeight = 3,
         Button_MarginWidth = 6,
         Button_ItemSpacing = 4,
 
@@ -89,11 +91,11 @@ namespace Feren
         CheckBox_ItemSpacing = 4,
 
         // menubar items
-        MenuBarItem_MarginWidth = 10,
-        MenuBarItem_MarginHeight = 6,
+        MenuBarItem_MarginWidth = 8,
+        MenuBarItem_MarginHeight = 5,
 
         // scrollbars
-        ScrollBar_Extend = 21,
+        ScrollBar_Extend = 14,
         ScrollBar_SliderWidth = 6,
         ScrollBar_MinSliderHeight = 20,
         ScrollBar_NoButtonHeight = (ScrollBar_Extend-ScrollBar_SliderWidth)/2,
@@ -109,24 +111,24 @@ namespace Feren
         ToolBar_ItemSpacing = 0,
 
         // progressbars
-        ProgressBar_BusyIndicatorSize = 14,
-        ProgressBar_Thickness = 6,
-        ProgressBar_ItemSpacing = 4,
+        ProgressBar_BusyIndicatorSize = 24,
+        ProgressBar_Thickness = 4,
+        ProgressBar_ItemSpacing = 3,
 
         // mdi title bar
         TitleBar_MarginWidth = 4,
 
         // sliders
-        Slider_TickLength = 8,
-        Slider_TickMarginWidth = 2,
-        Slider_GrooveThickness = 6,
-        Slider_ControlThickness = 20,
+        Slider_TickLength = 4,
+        Slider_TickMarginWidth = 6,
+        Slider_GrooveThickness = 4,
+        Slider_ControlThickness = 22,
 
         // tabbar
-        TabBar_TabMarginHeight = 4,
+        TabBar_TabMarginHeight = 9,
         TabBar_TabMarginWidth = 8,
         TabBar_TabMinWidth = 80,
-        TabBar_TabMinHeight = 30,
+        TabBar_TabMinHeight = 36,
         TabBar_TabItemSpacing = 8,
         TabBar_TabOverlap = 1,
         TabBar_BaseOverlap = 2,

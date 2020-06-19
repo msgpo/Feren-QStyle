@@ -59,7 +59,6 @@ namespace Feren
         connect( _animationsDuration, SIGNAL(valueChanged(int)), SLOT(updateChanged()) );
         connect( _scrollBarAddLineButtons, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
         connect( _scrollBarSubLineButtons, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
-        connect( _windowDragMode, SIGNAL(currentIndexChanged(int)), SLOT(updateChanged()) );
         connect( _menuOpacity, &QAbstractSlider::valueChanged, this, &StyleConfig::updateChanged );
 
     }
@@ -81,7 +80,6 @@ namespace Feren
         StyleConfigData::setScrollBarSubLineButtons( _scrollBarSubLineButtons->currentIndex() );
         StyleConfigData::setAnimationsEnabled( _animationsEnabled->isChecked() );
         StyleConfigData::setAnimationsDuration( _animationsDuration->value() );
-        StyleConfigData::setWindowDragMode( _windowDragMode->currentIndex() );
         StyleConfigData::setMenuOpacity( _menuOpacity->value() );
 
         StyleConfigData::self()->save();
@@ -129,7 +127,6 @@ namespace Feren
         else if( _splitterProxyEnabled->isChecked() != StyleConfigData::splitterProxyEnabled() ) modified = true;
         else if( _animationsEnabled->isChecked() != StyleConfigData::animationsEnabled() ) modified = true;
         else if( _animationsDuration->value() != StyleConfigData::animationsDuration() ) modified = true;
-        else if( _windowDragMode->currentIndex() != StyleConfigData::windowDragMode() ) modified = true;
         else if( _menuOpacity->value() != StyleConfigData::menuOpacity() ) modified = true;
 
         emit changed(modified);
@@ -154,7 +151,6 @@ namespace Feren
         _scrollBarSubLineButtons->setCurrentIndex( StyleConfigData::scrollBarSubLineButtons() );
         _animationsEnabled->setChecked( StyleConfigData::animationsEnabled() );
         _animationsDuration->setValue( StyleConfigData::animationsDuration() );
-        _windowDragMode->setCurrentIndex( StyleConfigData::windowDragMode() );
         _menuOpacity->setValue( StyleConfigData::menuOpacity() );
 
     }

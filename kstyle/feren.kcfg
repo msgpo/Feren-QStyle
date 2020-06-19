@@ -135,14 +135,14 @@
     </entry>
 
     <!-- window dragging -->
-    <entry name="WindowDragMode" type="Enum">
+    <!--<entry name="WindowDragMode" type="Enum">
       <choices>
           <choice name="WD_NONE" />
-          <choice name="WD_MINIMAL" />
           <choice name="WD_FULL" />
+          <choice name="WD_MINIMAL" />
       </choices>
       <default>WD_MINIMAL</default>
-    </entry>
+    </entry>-->
 
     <!--
         this is the comma separated list of special per-app widgets on which

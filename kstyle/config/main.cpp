@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("feren_style_config");
 
     QApplication app( argc, argv );
-    app.setApplicationName( i18n( "Feren Settings" ) );
-    app.setWindowIcon( QIcon::fromTheme( QStringLiteral( "feren-settings" ) ) );
+    app.setApplicationName( i18n( "Feren Application Style Settings" ) );
+    app.setWindowIcon( QIcon::fromTheme( QStringLiteral( "breeze-settings" ) ) );
 
     KCMultiDialog dialog;
-    dialog.setWindowTitle( i18n( "Feren Settings" ) );
+    dialog.setWindowTitle( i18n( "Feren Application Style Settings" ) );
     dialog.addModule( QStringLiteral( "ferenconfig" ) );
     dialog.addModule( QStringLiteral( "ferendecorationconfig" ) );
     dialog.show();

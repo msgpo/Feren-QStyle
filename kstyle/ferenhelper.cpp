@@ -569,46 +569,21 @@ namespace Feren
         const QColor& color, const QColor& outline, bool roundCorners ) const
     {
 
-
         // set brush
         if( color.isValid() ) painter->setBrush( color );
         else painter->setBrush( Qt::NoBrush );
 
-        if( roundCorners )
+        painter->setRenderHint( QPainter::Antialiasing, false );
+        QRect frameRect( rect );
+        if( outline.isValid() )
         {
 
-            painter->setRenderHint( QPainter::Antialiasing );
-            QRectF frameRect( rect );
-            qreal radius( frameRadius( PenWidth::NoPen, -1 ) );
+            painter->setPen( outline );
+            frameRect.adjust( 0, 0, -1, -1 );
 
-            // set pen
-            if( outline.isValid() )
-            {
+        } else painter->setPen( Qt::NoPen );
 
-                painter->setPen( outline );
-                frameRect = strokedRect( frameRect );
-                radius = frameRadiusForNewPenWidth( radius, PenWidth::Frame );
-
-            } else painter->setPen( Qt::NoPen );
-
-            // render
-            painter->drawRoundedRect( frameRect, radius, radius );
-
-        } else {
-
-            painter->setRenderHint( QPainter::Antialiasing, false );
-            QRect frameRect( rect );
-            if( outline.isValid() )
-            {
-
-                painter->setPen( outline );
-                frameRect.adjust( 0, 0, -1, -1 );
-
-            } else painter->setPen( Qt::NoPen );
-
-            painter->drawRect( frameRect );
-
-        }
+        painter->drawRect( frameRect );
 
     }
 

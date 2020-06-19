@@ -210,7 +210,7 @@ namespace Feren
         bool _useWMMoveResize = true;
 
         //* drag mode
-        int _dragMode = StyleConfigData::WD_FULL;
+        int _dragMode = 3;
 
         //* drag distance
         /** this is copied from kwin::geometry */

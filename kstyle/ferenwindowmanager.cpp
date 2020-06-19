@@ -201,8 +201,8 @@ namespace Feren
     void WindowManager::initialize()
     {
 
-        setEnabled( StyleConfigData::windowDragMode() != StyleConfigData::WD_NONE );
-        setDragMode( StyleConfigData::windowDragMode() );
+        setEnabled( true );
+        setDragMode( 3 );
         setUseWMMoveResize( StyleConfigData::useWMMoveResize() );
 
         setDragDistance( QApplication::startDragDistance() );
@@ -670,7 +670,7 @@ namespace Feren
         // tool buttons
         if( auto toolButton = qobject_cast<QToolButton*>( widget ) )
         {
-            if( dragMode() == StyleConfigData::WD_MINIMAL && !qobject_cast<QToolBar*>(widget->parentWidget() ) ) return false;
+            if( !qobject_cast<QToolBar*>(widget->parentWidget() ) ) return false;
             return toolButton->autoRaise() && !toolButton->isEnabled();
         }
 
@@ -700,11 +700,8 @@ namespace Feren
         in MINIMAL mode, anything that has not been already accepted
         and does not come from a toolbar is rejected
         */
-        if( dragMode() == StyleConfigData::WD_MINIMAL )
-        {
-            if( qobject_cast<QToolBar*>( widget ) ) return true;
+        if( qobject_cast<QToolBar*>( widget ) ) return true;
             else return false;
-        }
 
         /* following checks are relevant only for WD_FULL mode */
 
