@@ -70,8 +70,8 @@ namespace Feren
     {
 
         QColor blackcol(0,0,0);
-        blackcol.setAlpha(48);
-        QColor outline( blackcol );
+        // If we use transparency here, we get a cool looking glow from the blur around menus... but it's not what is intended though so uh yeah
+        QColor outline( KColorUtils::mix( palette.color( QPalette::Base ), blackcol, 0.19 ) );
 
         // focus takes precedence over hover
         if( mode == AnimationFocus )
