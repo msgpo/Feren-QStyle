@@ -4509,12 +4509,14 @@ namespace Feren
         // render hover and focus
         if( useStrongFocus && ( selected || sunken ) )
         {
-
+            
+            //Get rid of the hover effect
             QColor outlineColor;
-            if( sunken ) outlineColor = _helper->focusColor( palette );
-            else if( selected ) outlineColor = _helper->hoverColor( palette );
-            _helper->renderFocusRect( painter, rect, outlineColor );
-
+            if( sunken ) {
+                outlineColor = _helper->focusColor( palette );
+                _helper->renderFocusRect( painter, rect, outlineColor );
+            }
+            
         }
 
         /*
