@@ -70,7 +70,8 @@ namespace Feren
     {
 
         QColor blackcol(0,0,0);
-        QColor outline( KColorUtils::mix( palette.color( QPalette::Base ), blackcol, 0.19 ) );
+        blackcol.setAlpha(48);
+        QColor outline( blackcol );
 
         // focus takes precedence over hover
         if( mode == AnimationFocus )
@@ -104,12 +105,14 @@ namespace Feren
     //____________________________________________________________________
     QColor Helper::focusOutlineColor( const QPalette& palette ) const
     { QColor blackcol(0,0,0);
-      return KColorUtils::mix( focusColor( palette ), blackcol, 0.19 ); }
+      blackcol.setAlpha(48);
+      return blackcol; }
 
     //____________________________________________________________________
     QColor Helper::hoverOutlineColor( const QPalette& palette ) const
     { QColor blackcol(0,0,0);
-      return KColorUtils::mix( hoverColor( palette ), blackcol, 0.19 ); }
+      blackcol.setAlpha(48);
+      return blackcol; }
 
     //____________________________________________________________________
     QColor Helper::buttonFocusOutlineColor( const QPalette& palette ) const
@@ -403,7 +406,8 @@ namespace Feren
     //______________________________________________________________________________
     QColor Helper::separatorColor( const QPalette& palette ) const
     { QColor blackcol(0,0,0);
-      return KColorUtils::mix( palette.color( QPalette::Base ), blackcol, 0.19 ); }
+      blackcol.setAlpha(48);
+      return blackcol; }
 
     //______________________________________________________________________________
     QPalette Helper::disabledPalette( const QPalette& source, qreal ratio ) const

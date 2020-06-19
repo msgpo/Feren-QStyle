@@ -4645,13 +4645,14 @@ namespace Feren
             const auto outlineColor = _helper->focusOutlineColor( palette );
 
             Sides sides = nullptr;
-            if( !menuItemOption->menuRect.isNull() )
-            {
-                if( rect.top() <= menuItemOption->menuRect.top() ) sides |= SideTop;
-                if( rect.bottom() >= menuItemOption->menuRect.bottom() ) sides |= SideBottom;
-                if( rect.left() <= menuItemOption->menuRect.left() ) sides |= SideLeft;
-                if( rect.right() >= menuItemOption->menuRect.right() ) sides |= SideRight;
-            }
+            // DISABLE CORNERS FOR MENU ITEMS BY COMMENTING THESE OUT
+//             if( !menuItemOption->menuRect.isNull() )
+//             {
+//                 if( rect.top() <= menuItemOption->menuRect.top() ) sides |= SideTop;
+//                 if( rect.bottom() >= menuItemOption->menuRect.bottom() ) sides |= SideBottom;
+//                 if( rect.left() <= menuItemOption->menuRect.left() ) sides |= SideLeft;
+//                 if( rect.right() >= menuItemOption->menuRect.right() ) sides |= SideRight;
+//             }
 
             _helper->renderFocusRect( painter, rect, color, outlineColor, sides );
 
