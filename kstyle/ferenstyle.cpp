@@ -179,10 +179,10 @@ namespace Feren
             QStringLiteral( "org.kde.Feren.Style" ),
             QStringLiteral( "reparseConfiguration" ), this, SLOT(configurationChanged()) );
 
-        dbus.connect( QString(),
-            QStringLiteral( "/FerenDecoration" ),
-            QStringLiteral( "org.kde.Feren.Style" ),
-            QStringLiteral( "reparseConfiguration" ), this, SLOT(configurationChanged()) );
+//         dbus.connect( QString(),
+//             QStringLiteral( "/FerenDecoration" ),
+//             QStringLiteral( "org.kde.Feren.Style" ),
+//             QStringLiteral( "reparseConfiguration" ), this, SLOT(configurationChanged()) );
         #if QT_VERSION < 0x050D00 // Check if Qt version < 5.13
         this->addEventFilter(qApp);
         #else
@@ -1138,7 +1138,7 @@ namespace Feren
 
             const auto rect( widget->rect() );
             const auto& palette( widget->palette() );
-            const auto background( _helper->frameBackgroundColor( palette ) );
+            const auto background( _helper->frameBackgroundColor( palette.color(QPalette::Base) ) );
             const auto outline( _helper->frameOutlineColor( palette ) );
 
             const bool hasAlpha( _helper->hasAlphaChannel( widget ) );
@@ -1172,7 +1172,7 @@ namespace Feren
 
             // store palette and set colors
             const auto& palette( dockWidget->palette() );
-            const auto background( _helper->frameBackgroundColor( palette ) );
+            const auto background( _helper->frameBackgroundColor( palette.color(QPalette::Base) ) );
             const auto outline( _helper->frameOutlineColor( palette ) );
 
             // store rect
@@ -3103,7 +3103,7 @@ namespace Feren
         {
 
             const auto& palette( option->palette );
-            const auto background( _helper->frameBackgroundColor( palette ) );
+            const auto background( _helper->frameBackgroundColor( palette.color(QPalette::Base) ) );
             const auto outline( _helper->frameOutlineColor( palette ) );
 
             const bool hasAlpha( _helper->hasAlphaChannel( widget ) );
@@ -3609,7 +3609,7 @@ namespace Feren
         const auto& palette( option->palette );
         const auto outline( _helper->frameOutlineColor( palette ) );
         const bool hasAlpha( _helper->hasAlphaChannel( widget ) );
-        auto background( _helper->frameBackgroundColor( palette ) );
+        auto background( _helper->frameBackgroundColor( palette.color(QPalette::Base) ) );
 
         if ( hasAlpha ) {
             background.setAlphaF(StyleConfigData::menuOpacity() / 100.0);

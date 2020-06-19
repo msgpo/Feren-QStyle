@@ -69,7 +69,8 @@ namespace Feren
     QColor Helper::frameOutlineColor( const QPalette& palette, bool mouseOver, bool hasFocus, qreal opacity, AnimationMode mode ) const
     {
 
-        QColor outline( KColorUtils::mix( palette.color( QPalette::Window ), palette.color( QPalette::WindowText ), 0.25 ) );
+        QColor blackcol(0,0,0);
+        QColor outline( KColorUtils::mix( palette.color( QPalette::Window ), blackcol, 0.19 ) );
 
         // focus takes precedence over hover
         if( mode == AnimationFocus )
@@ -102,11 +103,13 @@ namespace Feren
 
     //____________________________________________________________________
     QColor Helper::focusOutlineColor( const QPalette& palette ) const
-    { return KColorUtils::mix( focusColor( palette ), palette.color( QPalette::WindowText ), 0.15 ); }
+    { QColor blackcol(0,0,0);
+      return KColorUtils::mix( focusColor( palette ), blackcol, 0.19 ); }
 
     //____________________________________________________________________
     QColor Helper::hoverOutlineColor( const QPalette& palette ) const
-    { return KColorUtils::mix( hoverColor( palette ), palette.color( QPalette::WindowText ), 0.15 ); }
+    { QColor blackcol(0,0,0);
+      return KColorUtils::mix( hoverColor( palette ), blackcol, 0.19 ); }
 
     //____________________________________________________________________
     QColor Helper::buttonFocusOutlineColor( const QPalette& palette ) const
@@ -399,7 +402,8 @@ namespace Feren
 
     //______________________________________________________________________________
     QColor Helper::separatorColor( const QPalette& palette ) const
-    { return KColorUtils::mix( palette.color( QPalette::Window ), palette.color( QPalette::WindowText ), 0.25 ); }
+    { QColor blackcol(0,0,0);
+      return KColorUtils::mix( palette.color( QPalette::Window ), blackcol, 0.19 ); }
 
     //______________________________________________________________________________
     QPalette Helper::disabledPalette( const QPalette& source, qreal ratio ) const
