@@ -310,8 +310,8 @@ namespace Feren
         if( widget->property( PropertyNames::netWMSkipShadow ).toBool() ) return false;
         if( widget->property( PropertyNames::netWMForceShadow ).toBool() ) return true;
 
-        // menus
-        if( isMenu( widget ) ) return true;
+        // stop giving menus shadows (match with GTK theme)
+        if( isMenu( widget ) ) return false;
 
         // combobox dropdown lists
         if( widget->inherits( "QComboBoxPrivateContainer" ) ) return true;
